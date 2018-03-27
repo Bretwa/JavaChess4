@@ -1,6 +1,4 @@
-# JavaChess4
-
-JavaChess 4 has been created with Java 7 in 2012. It reaches depth 7 in about 1s on modern 2018 computer, features :
+JavaChess 4 has been created with Java 7 in 2013. It reaches depth 8 in about 1s on modern 2018 computer, features :
 
 - human vs human
 - human vs comp
