@@ -6,7 +6,6 @@ JavaChess 4 has been created with Java 7 in 2013. It reaches depth 7 in less tha
 - load/save
 - algebraic notation
 - alpha-beta
-- quiescence 
 - depth 1 multithreading
 - native bitboards
 - sliding moves
