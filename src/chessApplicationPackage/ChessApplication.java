@@ -226,6 +226,7 @@ public class ChessApplication extends JFrame implements ActionListener
 		itemPlaySound=new JCheckBoxMenuItem(playSound);
 		itemPlaySound.setAccelerator(KeyStroke.getKeyStroke('p'));
 		itemPlaySound.setSelected(true); // yes sound
+		itemPlaySound.setSelected(false); // yes sound
 		menuOptions.add(itemPlaySound);
 		itemPlaySound.addActionListener(this);
 		menuBar.add(menuOptions);
@@ -563,7 +564,7 @@ public class ChessApplication extends JFrame implements ActionListener
 		/*
 		 * long beginingTimeForComputerVsComputerGame=System.currentTimeMillis(); long totalMovesForTheEntireGame=0; long incrementTime=0;
 		 */
-		for(int counterMoves=0;counterMoves<1000;counterMoves++)
+		for(int counterMoves=0;counterMoves<100000;counterMoves++)
 		{
 			ArrayList<Point> listPointSource=new ArrayList<Point>();
 			ArrayList<Point> listPointDestination=new ArrayList<Point>();
@@ -660,7 +661,11 @@ public class ChessApplication extends JFrame implements ActionListener
 			tipsFrame.setTitle(tips);
 			Container tipsContainer=tipsFrame.getContentPane();
 			tipsFrame.setLayout(new BorderLayout());
-			JLabel compte=new JLabel("<html><br/> - If you are playing against the computer and if you cancel a move, the computer will stop playing. You have to manually reset the computer player.<br/><br/>"+" - Random moves : sometimes the computer has to choice between severals moves, use this option to randomly choose among these choices.<br/><br/>"+" - Shortcuts : use 'c' to cancel a move, 'r' to replay a move, 'p' to play sound each move, 't' to turn the chessboard, 's' to set or unset textures on squares and 'r' to switch on/off random moves.</html>");
+			JLabel compte=new JLabel("<html><br/> - If you are playing against the computer and if you cancel a move, the computer will stop playing. You have to manually reset the computer player.<br/><br/>"+
+			" - Random moves : sometimes the computer has to choice between severals moves, use this option to randomly choose among these choices.<br/><br/>"+
+					" - Shortcuts : use 'c' to cancel a move, 'r' to replay a move, 'p' to play sound each move, 't' to turn the chessboard, 's' to set or unset textures on squares and 'r' to switch on/off random moves.<br/><br/>"
+					+ "- To play computer versus computer you need to check the two checkboxes in the game menu."
+					+ "</html>");
 			tipsContainer.add(compte,BorderLayout.NORTH);
 			tipsFrame.setSize(tipsFrameWidth,tipsFrameHeight);
 			tipsFrame.setLocationRelativeTo(null);
