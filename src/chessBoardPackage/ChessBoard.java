@@ -1,6 +1,5 @@
 package chessBoardPackage;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -141,8 +140,7 @@ public class ChessBoard extends JComponent implements Runnable
 		return 0;
 	}
 	
-	// retrieve a point in ChessBoard coordinates with pixels coordinates as
-	// input parameter
+	// retrieve a point in ChessBoard coordinates with pixels coordinates as input parameter
 	public Point getCorrespondingSquare(Point pointCoordinates)
 	{
 		int horizontalSquareSelected=pointCoordinates.x/squareSize;
@@ -160,13 +158,8 @@ public class ChessBoard extends JComponent implements Runnable
 	{
 		BufferedImage resultImage=new BufferedImage(imageParameter.getWidth(),imageParameter.getHeight(),BufferedImage.TYPE_INT_ARGB);
 		Graphics2D graphics=resultImage.createGraphics();
-		graphics.setComposite(AlphaComposite.Src);
 		graphics.drawImage(imageParameter,null,0,0);
 		graphics.dispose();
-		for(int counterVertical=0;counterVertical<resultImage.getHeight();counterVertical++)
-			for(int counterHorizontal=0;counterHorizontal<resultImage.getWidth();counterHorizontal++)
-				if(resultImage.getRGB(counterHorizontal,counterVertical)==color.getRGB())
-					resultImage.setRGB(counterHorizontal,counterVertical,0x8F1C1C);
 		return resultImage;
 	}
 	
